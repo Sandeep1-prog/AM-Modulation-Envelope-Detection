@@ -111,16 +111,3 @@ pip install -r requirements.txt
 python src/am_envelope_detection.py
 ```
 All output figures are automatically saved to the `assets/` directory.
-
----
-
-## 6. Technical Interview Highlights (e.g. for BEL / Defense PSUs)
-
-1. **Why is envelope detection preferred over synchronous detection in commercial AM broadcast?**
-   - An envelope detector requires only a diode, resistor, and capacitor. It does not require complex carrier synchronization circuits (like a Phase-Locked Loop), making receivers inexpensive and robust.
-
-2. **What causes diagonal clipping in an envelope detector?**
-   - When the $RC$ discharge time constant of the load is larger than the maximum rate of change of the modulation envelope ($\frac{1}{RC} < \frac{\mu \omega_m}{\sqrt{1 - \mu^2}}$), the capacitor cannot follow the envelope downward, causing diagonal distortion.
-
-3. **How can an over-modulated ($\mu > 1$) signal be demodulated without distortion?**
-   - By using **coherent/synchronous detection** (multiplying by a locally regenerated carrier $\cos(2\pi f_c t)$ and low-pass filtering) instead of an envelope detector.
